@@ -77,6 +77,10 @@
             border: 1px solid #4a5568;
             border-radius: 0.375rem;
         }
+        .color-control__swatch--active {
+            outline: none;
+            outline-offset: 0;
+        }
     </style>
 </head>
 <body class="text-white">
@@ -152,6 +156,7 @@
 
                     <!-- Background Controls -->
                     <div class="space-y-4">
+                        <h3 class="text-sm font-medium text-gray-400">BG COLORS</h3>
                         <div class="space-y-2">
                             <div class="flex justify-between items-center">
                                 <label for="bgBlur" class="control-label">Background Blur</label>
@@ -261,8 +266,8 @@
                 <!-- Download Buttons -->
                 <div class="mt-8 pt-6 border-t border-gray-700">
                      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                         <button id="downloadPngBtn" class="btn btn-secondary w-full opacity-50 pointer-events-none !py-3">Download PNG</button>
-                         <button id="downloadSvgBtn" class="btn btn-secondary w-full opacity-50 pointer-events-none !py-3">Download SVG</button>
+                         <button id="downloadPngBtn" class="btn btn-secondary w-full !py-3">Download PNG</button>
+                         <button id="downloadSvgBtn" class="btn btn-secondary w-full !py-3">Download SVG</button>
                      </div>
                 </div>
             </aside>
@@ -362,8 +367,6 @@
                 sourceImage.onload = () => {
                     controlsPanel.classList.remove('opacity-50', 'pointer-events-none');
                     presetsPanel.classList.remove('opacity-50', 'pointer-events-none');
-                    downloadPngBtn.classList.remove('opacity-50', 'pointer-events-none');
-                    downloadSvgBtn.classList.remove('opacity-50', 'pointer-events-none');
                     placeholder.style.display = 'none';
                     previewCanvas.style.display = 'block';
                     processImage();
